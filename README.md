@@ -26,11 +26,9 @@ Dimenssões da barra:
 - comprimento = 1 $sigma$
 - Área $1\times 10^{-3}\: m^2$.
 
-A barra está submetida a uma corrente de $1\times 10^{-3} A$ 
-nas extremidades e pontos aleatórios de tensão são
-medidos/calculado ao longo da barra.
+A barra está submetida a uma corrente de $1\times 10^{-3} A$ nas extremidades e pontos aleatórios de tensão são medidos/calculado ao longo da barra.
 
-Para rodar esse código em python são as seguintes bibliotecas;
+Para rodar esse código em python são necessários as seguintes bibliotecas;
 - numpy;
 - matplotlib;
 - meshio;
@@ -50,9 +48,7 @@ arquivos:
   - unidimensional_200e_py.msh 200 elementos;
   - unidimensional_300e_py.msh 300 elementos;
   - unidimensional_1000e_py.msh 1000 elementos.
-A malha 'unidimensional_71e_py' contém 71 elementos com
-tamanhos diferentes de 0.01, 0.02 e 0.03 metros. Nos demais
-arquivos os elementos têm tamanhos iguais.
+A malha 'unidimensional_71e_py' contém 71 elementos com tamanhos diferentes de 0.01, 0.02 e 0.03 metros. Nos demais arquivos os elementos têm tamanhos iguais.
 
 ---
 
