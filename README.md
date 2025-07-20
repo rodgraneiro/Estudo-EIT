@@ -58,7 +58,7 @@ A malha 'unidimensional_71e_py' contém 71 elementos com tamanhos diferentes de 
 
 ---
 
-Para escolher uma malha, descomente a linha de comando:
+Para escolher uma malha, descomente a seguinte linha de comando no arquivo EIT_1D.py:
 
 ` ` `
 #opcao = input('Escolha a malha(71, 100, 200, 300, 1000): ')
@@ -72,7 +72,7 @@ opcao = '71'
 
 ---
 
-Para escolher os nós de medição descomente a linha de comando:
+Para escolher os nós de medição descomente a seguinte linha de comando no arquivo EIT_1D.py:
 
 ` ` `
 #entrada = input("Digite os nós medidos separados por vírgula (ex.: 0,10,20: ")
