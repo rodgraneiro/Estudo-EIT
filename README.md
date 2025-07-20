@@ -5,14 +5,10 @@ para determinar a condutividade  $\sigma$ de uma barra de 1m,
 discretizada numa lalha de Elementos Finitos 1D, por 
 meio minimização pelo método 'Gauss-Newton' da equação: 
 
-\(
+$$
 \hat{\sigma}_{k+1} = \hat{\sigma}_k + \alpha_k
 \left( J_k^T W_1 J_k + \lambda^2 L_2^T L_2 \right)^{-1}
 \cdot \left( J_k^T W_1 (z - h(\hat{\sigma}_k)) - \lambda^2 L_2^T L_2 (\hat{\sigma}_k - \sigma^*) \right)
-\)
-
-$$
-E = mc^2
 $$
 
 
