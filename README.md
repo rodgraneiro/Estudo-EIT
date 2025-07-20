@@ -50,21 +50,28 @@ tamanhos diferentes de 0.01, 0.02 e 0.03 metros. Nos demais
 arquivos os elementos têm tamanhos iguais.
 
 ---
+
 Para escolher uma malha, descomente a linha de comando:
+
 ` ` `  python
 #opcao = input('Escolha a malha(71, 100, 200, 300, 1000): ')
 ` ` ` 
 ou altere a seguinte linha de comando como desejado.
+
 ` ` `  python
 opcao = '71'
 ` ` ` 
+
 ---
 
 Para escolher os nós de medição descomente a linha de comando:
+
 ` ` `  python
 #entrada = input("Digite os nós medidos separados por vírgula (ex.: 0,10,20: ")
 ` ` ` 
+
 ou altere a seguinte linha de comando como desejado.
+
 ` ` `  python
 noh_medidos = [0,  7, 14, 21, 28, 35, 42, 49, 56, 63,  n_elements] 
 ` ` ` 
