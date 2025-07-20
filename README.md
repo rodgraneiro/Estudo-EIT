@@ -1,9 +1,6 @@
 # Estudo-EIT
 
-Este código resolve o 'Problema Direto' e  'Problema Inverso'
-para determinar a condutividade  $\sigma$ de uma barra de 1m,
-discretizada numa lalha de Elementos Finitos 1D, por 
-meio minimização pelo método 'Gauss-Newton' da equação: 
+Este código resolve o 'Problema Direto' e  'Problema Inverso' para determinar a condutividade  $\sigma$ de uma barra de 1m, discretizada numa lalha de Elementos Finitos 1D, por meio da minimização pelo método 'Gauss-Newton' da equação: 
 
 
 
