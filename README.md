@@ -49,13 +49,14 @@ arquivos:
   - unidimensional_200e_py.msh 200 elementos;
   - unidimensional_300e_py.msh 300 elementos;
   - unidimensional_1000e_py.msh 1000 elementos.
+  - 
 A malha 'unidimensional_71e_py' contém 71 elementos com tamanhos diferentes de 0.01, 0.02 e 0.03 metros. Nos demais arquivos os elementos têm tamanhos iguais.
 
 ---
 
 Para escolher uma malha, descomente a linha de comando:
 
-` ` `python
+` ` `
 #opcao = input('Escolha a malha(71, 100, 200, 300, 1000): ')
 ` ` ` 
 
