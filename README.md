@@ -25,7 +25,7 @@ onde,
 
 Dimenssões da barra:
 - comprimento = 1 $m$
-- Área = $1\times 10^{-3} m^2$.
+- Área = $1\times 10^{-3}$ $m^2$.
 
 A barra está submetida a uma corrente de $1\times 10^{-3} A$ nas extremidades e pontos aleatórios de tensão são medidos/calculado ao longo da barra.
 
