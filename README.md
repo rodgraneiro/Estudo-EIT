@@ -54,7 +54,7 @@ arquivos:
   - unidimensional_300e_py.msh 300 elementos;
   - unidimensional_1000e_py.msh 1000 elementos.
     
-A malha 'unidimensional_71e_py' contém 71 elementos com tamanhos diferentes de 0.01, 0.02 e 0.03 metros. Nos demais arquivos os elementos têm tamanhos iguais.
+A malha 'unidimensional_71e_py' contém 71 elementos com tamanhos diferentes de 0.01, 0.02 e 0.03 metros. Nos demais arquivos, os elementos têm tamanhos iguais.
 
 ---
 
