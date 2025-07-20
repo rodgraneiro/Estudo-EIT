@@ -29,6 +29,8 @@ Dimenssões da barra:
 
 A barra está submetida a uma corrente de $1\times 10^{-3} A$ nas extremidades, e pontos aleatórios de tensão são medidos/calculado ao longo da barra.
 
+---
+
 Para rodar esse código em python são necessários as seguintes bibliotecas;
 - numpy;
 - matplotlib;
@@ -38,6 +40,8 @@ Para rodar esse código em python são necessários as seguintes bibliotecas;
 - QtCore;
 - PyQt5;
 - PySide6.
+
+---
 
 Para rodar esse código também são necessários os sequites
 arquivos:
