@@ -13,6 +13,9 @@ $$
 
 onde,
 - $\sigma$ é condutividade $S/m$;
+  - \hat{\sigma}_{k+1} condutividade estimada da próxima iteração;
+  - \hat{\sigma}_k condutividade estimada atual;
+  - \sigma^* condutividade 'a priori'
 - $\alpha$ é uma constante de regularização;
 - $\lambda$ é uma constante de regularização;
 - $W_1$ é a matriz Identidade;
