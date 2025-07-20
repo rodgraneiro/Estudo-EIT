@@ -18,6 +18,7 @@ onde,
   - $\sigma^*$ condutividade 'a priori'
 - $\alpha$ é uma constante de regularização;
 - $\lambda$ é uma constante de regularização;
+- $h$ é a matriz de condutividades (rigidez);
 - $W_1$ é a matriz Identidade;
 - $J$ é a matriz jacobiana;
 - $L_2$ é a matriz de um Filtro Passa-Alta.
