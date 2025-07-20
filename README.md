@@ -5,11 +5,11 @@ para determinar a condutividade  $\sigma$ de uma barra de 1m,
 discretizada numa lalha de Elementos Finitos 1D, por 
 meio minimização pelo método 'Gauss-Newton' da equação: 
 
-$
+\(
 \hat{\sigma}_{k+1} = \hat{\sigma}_k + \alpha_k
 \left( J_k^T W_1 J_k + \lambda^2 L_2^T L_2 \right)^{-1}
 \cdot \left( J_k^T W_1 (z - h(\hat{\sigma}_k)) - \lambda^2 L_2^T L_2 (\hat{\sigma}_k - \sigma^*) \right)
-$
+\)
 
 onde,
 - $\sigma$ é condutividade $S/m$;
@@ -55,13 +55,13 @@ arquivos os elementos têm tamanhos iguais.
 
 Para escolher uma malha, descomente a linha de comando:
 
-` ` `  python
+` ` `python
 #opcao = input('Escolha a malha(71, 100, 200, 300, 1000): ')
 ` ` ` 
 
 ou altere a seguinte linha de comando como desejado.
 
-` ` `  python
+` ` `python
 opcao = '71'
 ` ` ` 
 
@@ -69,13 +69,13 @@ opcao = '71'
 
 Para escolher os nós de medição descomente a linha de comando:
 
-` ` `  python
+` ` `python
 #entrada = input("Digite os nós medidos separados por vírgula (ex.: 0,10,20: ")
 ` ` ` 
 
 ou altere a seguinte linha de comando como desejado.
 
-` ` `  python
+` ` `python
 noh_medidos = [0,  7, 14, 21, 28, 35, 42, 49, 56, 63,  n_elements] 
 ` ` ` 
 
