@@ -73,7 +73,7 @@ opcao = '100'
 
 ---
 
-Para escolher os nós de medição descomente as seguintes linhas de comando no arquivo EIT_1D.py:
+Para escolher os nós de medição, descomente as seguintes linhas de comando no arquivo EIT_1D.py:
 
 ` ` `
 #entrada = input("Digite os nós medidos separados por vírgula (ex.: 0,10,20: ")
