@@ -49,12 +49,13 @@ arquivos:
 - EIT_functions.py contém as funções necessárias;
 - EIT_mesh_1D.py com as seguintes malhas 1D:
   - unidimensional_71e_py.msh 71 elementos;
-  - unidimensional_100e_py.msh 100 elementos;
+  - unidimensional_100e_py.msh 100 elementos ou,
+  - unidimensional_100T_dif_py.msh 100 elementos,
   - unidimensional_200e_py.msh 200 elementos;
   - unidimensional_300e_py.msh 300 elementos;
   - unidimensional_1000e_py.msh 1000 elementos.
     
-A malha 'unidimensional_71e_py' contém 71 elementos com tamanhos diferentes de 0.01, 0.02 e 0.03 metros. Nos demais arquivos, os elementos têm tamanhos iguais.
+As malha 'unidimensional_71e_py' e 'unidimensional_100T_dif_py' contêm elementos com tamanhos diferentes de 0.005, 0.01, 0.02 e 0.03 metros. Nos demais arquivos, os elementos têm tamanhos iguais.
 
 ---
 
@@ -67,22 +68,21 @@ Para escolher uma malha, descomente a seguinte linha de comando no arquivo EIT_1
 ou altere a seguinte linha de comando como desejado.
 
 ` ` `
-opcao = '71'
+opcao = '100'
 ` ` ` 
 
 ---
 
-Para escolher os nós de medição descomente a seguinte linha de comando no arquivo EIT_1D.py:
+Para escolher os nós de medição descomente as seguintes linhas de comando no arquivo EIT_1D.py:
 
 ` ` `
 #entrada = input("Digite os nós medidos separados por vírgula (ex.: 0,10,20: ")
+...
+#entrada = input("Digite os nós medidos separados por vírgula (ex.: 0,10,20: ")
+...
+#noh_medidos = [int(x.strip()) for x in entrada.split(',')]
 ` ` ` 
-
-ou altere a seguinte linha de comando como desejado.
-
-` ` `
-noh_medidos = [0,  7, 14, 21, 28, 35, 42, 49, 56, 63,  n_elements] 
-` ` ` 
+ 
 
 ---
 
