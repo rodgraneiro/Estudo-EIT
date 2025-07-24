@@ -437,7 +437,9 @@ def plotar_grafico(matriz_coordenadas_b,
                    noh_medidos,
                    alpha_b,
                    lambda_b,
-                   std
+                   std,
+                   ylim=(0.0, 0.60),
+                   figsize=(16, 4)
                    ):
     # Coordenadas x dos nós
     x_coords = matriz_coordenadas_b.flatten()
@@ -452,7 +454,7 @@ def plotar_grafico(matriz_coordenadas_b,
     pos_valores_med = [valores[i] for i in noh_medidos]
     pos_valores_real = [valores_real[i] for i in noh_medidos]
     # 4. Gráfico tipo steam
-    plt.figure(figsize=(16, 4))
+    plt.figure(figsize=figsize)
     #plt.stem(centros, valores)
     plt.plot(centros, valores ,
             marker='None',
@@ -469,7 +471,7 @@ def plotar_grafico(matriz_coordenadas_b,
             color='red',
             label='Ptos medidos')
     plt.xlim(0, 1.01)
-    plt.ylim(0.0, 0.60)
+    plt.ylim(ylim)
     plt.xlabel('Posição [m]')
     plt.ylabel('Condutividade σ')
     plt.title('Distribuição de  σ nos elementos 1D')
