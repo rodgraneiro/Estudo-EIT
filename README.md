@@ -77,9 +77,13 @@ Para escolher os nós de medição descomente as seguintes linhas de comando no 
 
 ` ` `
 #entrada = input("Digite os nós medidos separados por vírgula (ex.: 0,10,20: ")
+
 ...
+
 #entrada = input("Digite os nós medidos separados por vírgula (ex.: 0,10,20: ")
+
 ...
+
 #noh_medidos = [int(x.strip()) for x in entrada.split(',')]
 ` ` ` 
  
