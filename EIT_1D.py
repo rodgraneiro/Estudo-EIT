@@ -129,9 +129,9 @@ covariance_vector = np.ones(n_elements) * 0.001
 comprimento = calc_length_elemento(matriz_coordenadas_b, 
                                    matriz_topologia_b, n_elements)
 
-#L2 = calc_L2_gauss_1D(std, centroids_1D, covariance_vector)
-L2 = calc_L2_Adler1(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
-                 centroids_1D, s_k, n_elements, limite=1e-4, n_points=n_points)
+L2 = calc_L2_gauss_1D(std, centroids_1D) #, covariance_vector)
+#L2 = calc_L2_Adler1(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
+#                 centroids_1D, s_k, n_elements, limite=1e-4, n_points=n_points)
 
 #L2 = calc_L2_Adler2(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
 #                 centroids_1D, s_k, n_elements, limite=1e-4, n_points=n_points)
