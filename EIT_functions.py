@@ -295,6 +295,80 @@ def calc_L2_gauss_1D(std, centroids_1D):#, covariance_vector):
 
 
 
+###############################################################################
+# Essa função monta a matriz do Filtro Passa Alta
+# FPA = I - M
+# Onde I é a matriz Identidade e M a matriz gaussiana.
+###############################################################################
+def calc_L2_Adler1(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
+                   centroids, s_k, n_elementos, limite, n_points):
+
+    comprimento_medio = np.mean(comprimento)
+    # Beta do filtro gaussiano
+    L = np.zeros((n_elementos, n_elementos))
+
+    for j in range(n_elementos):
+        r_j = centroids[j]
+        Z_j = 0.0
+
+        for i in range(n_elementos):
+            #x_i = i * h[i]
+            r_ik_relative = s_k * comprimento_medio
+            r_ik = matriz_coordenadas_b[i] + r_ik_relative
+
+            dist2 = (r_ik - r_j)**2
+            sum_exp = np.sum(np.exp(-beta * dist2)) / n_points
+
+            L[i, j] = comprimento_medio * sum_exp
+            Z_j += comprimento_medio * sum_exp
+
+        L[:, j] /= Z_j  # normalização para garantir soma 1 em cada coluna
+    # Filtro passa-alta
+    L[np.abs(L) < limite] = 0.0
+    I = np.eye(n_elementos)
+    FPA = I - L
+    return FPA
+###############################################################################
+
+
+###############################################################################
+# Essa função monta a matriz do Filtro Passa Alta
+# FPA = I - M
+# Onde I é a matriz Identidade e M a matriz gaussiana.
+###############################################################################
+def calc_L2_Adler2(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
+                   centroids, s_k, n_elementos, limite, n_points):
+
+    #comprimento_medio = np.mean(comprimento)
+    # Beta do filtro gaussiano
+    L = np.zeros((n_elementos, n_elementos))
+
+    for j in range(n_elementos):
+        r_j = centroids[j]
+        Z_j = 0.0
+
+        for i in range(n_elementos):
+            #x_i = i * h[i]
+            r_ik_relative = s_k * comprimento[i]
+            r_ik = matriz_coordenadas_b[i] + r_ik_relative
+
+            dist2 = (r_ik - r_j)**2
+            sum_exp = np.sum(np.exp(-beta * dist2)) / n_points
+
+            L[i, j] = comprimento[i] * sum_exp
+            Z_j += comprimento[i] * sum_exp
+
+        L[:, j] /= Z_j  # normalização para garantir soma 1 em cada coluna
+    # Filtro passa-alta
+    L[np.abs(L) < limite] = 0.0
+    I = np.eye(n_elementos)
+    FPA = I - L
+    return FPA
+###############################################################################
+
+
+
+
 
 ###############################################################################
 # Essa função calcula a variação de sigma estimado para a próxima iteração
