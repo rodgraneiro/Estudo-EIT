@@ -1,4 +1,6 @@
 __pycache__/
 *.py[cod]
 *.so
+*.teste.py
+*.teste.ipynb
 
