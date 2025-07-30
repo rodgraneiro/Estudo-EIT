@@ -367,6 +367,49 @@ def calc_L2_Adler2(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b,
 ###############################################################################
 
 
+###############################################################################
+# Essa função monta a matriz do Filtro Passa Alta
+# Conforme algoritimo EIDORS
+# 
+##############################################################################
+def calc_Gaussian_HPF_1D(nodes, elements, diam_frac, zero_thresh=1e-4):
+    n_elem = elements.shape[0]
+    centroids = np.mean(nodes[elements], axis=1)
+    mdl_dim = nodes.max() - nodes.min()
+    mdl_dim = mdl_dim / 2.0
+    beta = 2.769 / (diam_frac * mdl_dim) ** 2
+    comprimento = np.abs(nodes[elements[:, 1]] - nodes[elements[:, 0]])
+    dim = 1
+    Abeta_pi = np.mean(comprimento) * (beta / np.pi) ** (dim / 2.0)
+
+    flt = np.zeros((n_elem, n_elem))
+
+    # usa apenas o centróide de cada elemento
+    for j in range(n_elem):
+        r_j = centroids[j]
+        dif = centroids - r_j           # distâncias entre centróides
+        r2  = dif**2
+        mean_elem = np.exp(-beta * r2)  # só 1 ponto -> sem média
+        flt[:, j] = Abeta_pi * mean_elem
+
+    # normalização
+    flt = flt / np.sum(flt, axis=0, keepdims=True)
+
+    # filtro passa-alta
+    flt = np.eye(n_elem) - flt
+
+    # simetrização
+    flt = 0.5 * (flt + flt.T)
+
+    # aplica limite de esparsidade
+    flt[np.abs(flt) < zero_thresh] = 0.0
+
+    return flt
+###############################################################################
+
+
+
+
 
 
 
