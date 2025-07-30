@@ -8,12 +8,12 @@ import numpy as np
 
 def files_mesh(opcao):
     caminho_malhas = {
-    '71' : 'unidimensional_71e_py.msh',     # malha elem de tamanhos diferentes    
-    # '100' : 'unidimensional_100e_py.msh',
-    '100' : 'unidimensional_100T_dif_py.msh',# malha ele de tamanhos diferentes
-    '200' : 'unidimensional_200e_py.msh',
-    '300' : 'unidimensional_300e_py.msh',
-    '1000' : 'unidimensional_1000e_py.msh',
+    '71' : r'd:/ParaGitHub/Estudo-EIT/unidimensional_71e_py.msh',     # malha elem de tamanhos diferentes    
+    # '100' : r'd:/ParaGitHub/Estudo-EIT/unidimensional_100e_py.msh',
+    '100' : r'd:/ParaGitHub/Estudo-EIT/unidimensional_100T_dif_py.msh',# malha ele de tamanhos diferentes
+    '200' : r'd:/ParaGitHub/Estudo-EIT/unidimensional_200e_py.msh',
+    '300' : r'd:/ParaGitHub/Estudo-EIT/unidimensional_300e_py.msh',
+    '1000' : r'd:/ParaGitHub/Estudo-EIT/unidimensional_1000e_py.msh',
     }
 
     sigma_reais = {
@@ -27,7 +27,7 @@ def files_mesh(opcao):
     noh_med = {
     '71':[0,  7, 14, 21, 28, 35, 42, 49, 56, 63,  71],
     '100':[0,  10, 20, 30, 40, 50, 60, 70, 80, 90,  100],
-    '200': [0,  20, 40, 60, 90, 100, 120, 140, 160, 180,  200],
+    '200': [0,  20, 40, 60, 80, 100, 120, 140, 160, 180,  200],
     '300': [0,  30, 60, 90, 120, 150, 180, 210, 240, 270,  300],
     '1000': [0,  100, 200, 300, 400, 500, 600, 700, 800, 900,  1000]
 }
