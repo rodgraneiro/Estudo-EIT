@@ -25,6 +25,7 @@ from EIT_functions import plotar_grafico
 from EIT_functions import plotar_iteracoes
 from EIT_functions import calc_L2_Adler1
 from EIT_functions import calc_L2_Adler2
+from EIT_functions import calc_Gaussian_HPF_1D
 from EIT_mesh_1D import files_mesh
 from EIT_Plot_1D import plot_EIT
 
@@ -129,14 +130,14 @@ covariance_vector = np.ones(n_elements) * 0.001
 comprimento = calc_length_elemento(matriz_coordenadas_b, 
                                    matriz_topologia_b, n_elements)
 
-L2 = calc_L2_gauss_1D(std, centroids_1D) #, covariance_vector)
+#L2 = calc_L2_gauss_1D(std, centroids_1D) #, covariance_vector)
 #L2 = calc_L2_Adler1(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
 #                 centroids_1D, s_k, n_elements, limite=1e-4, n_points=n_points)
 
 #L2 = calc_L2_Adler2(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
 #                 centroids_1D, s_k, n_elements, limite=1e-4, n_points=n_points)
 
-
+L2 = calc_Gaussian_HPF_1D(x_coords_b, topologia_bc, diam_frac)
 ###############################################################################
 
 
