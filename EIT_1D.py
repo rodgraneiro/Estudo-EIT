@@ -69,7 +69,7 @@ n_elements = matriz_topologia_b.shape[0]                      # Nr de elementos
 ###############################################################################
 
 alpha_b = 0.010                               # inicia variavel de ajuste alpha
-lambda_b = 0.010                                # inicia variavel de ajuste alpha
+lambda_b = 100.10                                # inicia variavel de ajuste alpha
 max_iter = 200                                         # Nr máximo de iterações
 lista_i = []                                        # Lista armazenar iterações
 lista_plotar = []                                      # Lista Valores de sigma
@@ -131,13 +131,13 @@ comprimento = calc_length_elemento(matriz_coordenadas_b,
                                    matriz_topologia_b, n_elements)
 
 #L2 = calc_L2_gauss_1D(std, centroids_1D) #, covariance_vector)
-#L2 = calc_L2_Adler1(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
-#                 centroids_1D, s_k, n_elements, limite=1e-4, n_points=n_points)
+L2 = calc_L2_Adler1(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
+                 centroids_1D, s_k, n_elements, limite=1e-4, n_points=n_points)
 
 #L2 = calc_L2_Adler2(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
 #                 centroids_1D, s_k, n_elements, limite=1e-4, n_points=n_points)
 
-L2 = calc_Gaussian_HPF_1D(x_coords_b, topologia_bc, diam_frac)
+#L2 = calc_Gaussian_HPF_1D(x_coords_b, topologia_bc, diam_frac)
 ###############################################################################
 
 
