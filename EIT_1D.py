@@ -47,7 +47,7 @@ inicio = time.time()
 ###############################################################################
 
 #opcao = input('Escolha a malha(71, 100, 200, 300, 1000): ')
-opcao = '71'
+opcao = '100'
 
 if opcao not in ['71','100', '100', '200', '300', '1000']:
     raise ValueError("Opção inválida.")
