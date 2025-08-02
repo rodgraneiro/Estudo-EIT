@@ -23,9 +23,6 @@ from EIT_functions import calc_delta_sigma_b
 from EIT_functions import calc_length_elemento
 from EIT_functions import plotar_grafico
 from EIT_functions import plotar_iteracoes
-from EIT_functions import calc_L2_Adler1
-from EIT_functions import calc_L2_Adler2
-from EIT_functions import calc_Gaussian_HPF_1D
 from EIT_mesh_1D import files_mesh
 from EIT_Plot_1D import plot_EIT
 
@@ -69,7 +66,7 @@ n_elements = matriz_topologia_b.shape[0]                      # Nr de elementos
 ###############################################################################
 
 alpha_b = 0.010                               # inicia variavel de ajuste alpha
-lambda_b = 100.10                                # inicia variavel de ajuste alpha
+lambda_b = 1.010                                # inicia variavel de ajuste alpha
 max_iter = 200                                         # Nr máximo de iterações
 lista_i = []                                        # Lista armazenar iterações
 lista_plotar = []                                      # Lista Valores de sigma
@@ -79,14 +76,7 @@ std = 0.1
 noh_cond_contorno_b = 0           # nó de referência para condições de contorno
 noh_med_op =  noh_med                     # Vetor elementos medidos (eletrodos)
 noh_medidos = noh_med_op.copy()           # Vetor elementos medidos (eletrodos)
-#noh_medidos = [0,  10, 20, 30, 40, 50, 60, 70, 80, 90,  n_elements]
-#noh_medidos = [0,  7, 14, 21, 28, 35, 42, 49, 56, 63,  n_elements]      
 
-# Solicita ao usuário os nós medidos
-#entrada = input("Digite os nós medidos separados por vírgula (ex.: 0,10,20: ")
-
-# Converte a string em uma lista de inteiros
-#noh_medidos = [int(x.strip()) for x in entrada.split(',')]
 
 
 sigma_inicial_b = np.full(n_elements, 1.0)          # Monta vetor sigma inicial
@@ -117,27 +107,11 @@ topologia_bc = matriz_topologia_b.astype(int) - 1
 
 centroids_1D = np.mean(x_coords_b[topologia_bc], axis=1)
 
-mdl_dim =1.0                                         # comprimento total 1 metro
-diam_frac = 0.30*mdl_dim                               # 30% co comprimrnto total
-beta = 2.769 / (diam_frac * mdl_dim)**2
-n_points = 3
-s_k = np.linspace(0, 1, n_points)
-
-#dx = 1.0 / nelements
-#centroids_1D = np.linspace(dx/2, 1 - dx/2, nelements)
-covariance_vector = np.ones(n_elements) * 0.001
-
 comprimento = calc_length_elemento(matriz_coordenadas_b, 
                                    matriz_topologia_b, n_elements)
 
-#L2 = calc_L2_gauss_1D(std, centroids_1D) #, covariance_vector)
-L2 = calc_L2_Adler1(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
-                 centroids_1D, s_k, n_elements, limite=1e-4, n_points=n_points)
+L2 = calc_L2_gauss_1D(std, centroids_1D) #, covariance_vector)
 
-#L2 = calc_L2_Adler2(diam_frac, mdl_dim, beta, comprimento, matriz_coordenadas_b, 
-#                 centroids_1D, s_k, n_elements, limite=1e-4, n_points=n_points)
-
-#L2 = calc_Gaussian_HPF_1D(x_coords_b, topologia_bc, diam_frac)
 ###############################################################################
 
 
@@ -320,7 +294,7 @@ print('matriz_topologia_b', matriz_topologia_b.shape)
 
 sigma_inicial_b = np.full(n_elements, 1.0)          # Monta vetor chute inicial
 chute = np.full(n_elements, 1.0)
-#noh_medidos = [0,  10, 20, 30, 40, 50, 60, 70, 80, 90,  n_elements]    # Vetor elementos medidos (eletrodos)
+
 ###############################################################################
 ###############################################################################
 
